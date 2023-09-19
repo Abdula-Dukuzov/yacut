@@ -7,9 +7,9 @@ ALLOWED_SIMBOLS_API_SHORT = '^[a-zA-Z0-9]+$'
 SHORT_LINK_LENGTH = 6
 SHORT_LINK_LENGTH_MAX = 16
 SHORT_URL_PATTERN = '^[' + re.escape(ALLOWED_SIMBOLS) + ']+$'
-INVALID_SHORT_URL = 'Указано недопустимое имя для короткой ссылки'
+INVALID_SHORT_URL = 'Указано недопустимое значение для короткой ссылки'
 INVALID_ORIGINAL_URL = (
-    'Недопустимое имя для ссылки, используйте http:// или https://')
+    'Недопустимое значение для ссылки, используйте http:// или https://')
 INDEX_URL = '/'
 
 

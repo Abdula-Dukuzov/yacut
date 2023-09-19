@@ -1,6 +1,6 @@
 from http import HTTPStatus
 
-from flask import abort, redirect, render_template
+from flask import redirect, render_template
 
 from settings import INDEX_URL
 from yacut import app, db
@@ -38,4 +38,4 @@ def redirect_view(short):
         url = URLMap.query.filter_by(short=short).first_or_404()
         return redirect(url.original, code=HTTPStatus.FOUND)
     except ShortLinkNotFound:
-        abort(HTTPStatus.NOT_FOUND)
+        return render_template('404.html'), HTTPStatus.NOT_FOUND

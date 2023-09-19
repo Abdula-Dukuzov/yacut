@@ -14,7 +14,7 @@ SHORT_URL_COMMENT = (
     'Добавьте короткую ссылку или она будет добавлена автоматически')
 REQUIRED_URL = 'Это поле обязательно для заполнения'
 SUBMIT_COMMENT = 'Создать короткую ссылку'
-SHORT_LINK_IS = 'Имя {short} уже занято!'
+DUPLICATE_SHORT_LINK_ERROR_MESSAGE = 'Имя {short} уже занято!'
 
 
 class URLForm(FlaskForm):
@@ -48,7 +48,7 @@ class URLForm(FlaskForm):
     def validate_custom_id(self, field):
         if URLMap.get_short(field.data):
             raise ValidationError(
-                SHORT_LINK_IS.format(
+                DUPLICATE_SHORT_LINK_ERROR_MESSAGE.format(
                     short=field.data
                 )
             )

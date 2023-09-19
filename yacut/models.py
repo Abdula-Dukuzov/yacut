@@ -29,14 +29,14 @@ class URLMap(db.Model):
         return URLMap.query.filter_by(short=short).first()
 
     @staticmethod
-    def get_unique_short_id():
-        while True:
+    def get_unique_short_id(max_attempts=10):
+        for _ in range(max_attempts):
             short = ''.join(
                 random.choices(ALLOWED_SIMBOLS, k=SHORT_LINK_LENGTH)
             )
             if not URLMap.get_short(short):
-                break
-        return short
+                return short
+        return None
 
     @staticmethod
     def create_short_link(short_generated):
