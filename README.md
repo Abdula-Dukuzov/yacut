@@ -26,7 +26,7 @@
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```
-git clone https://github.com/Abdula-Dukuzov/yacut.git
+git clone git@github.com:Abdula-Dukuzov/yacut.git
 ```
 
 ```
